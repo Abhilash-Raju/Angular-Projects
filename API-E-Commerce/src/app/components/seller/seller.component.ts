@@ -11,5 +11,7 @@ export class SellerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  signUp(data:object):void{
+    console.warn(data)
+  }
 }
