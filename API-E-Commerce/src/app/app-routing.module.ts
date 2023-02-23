@@ -5,7 +5,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { HeadersComponent } from './components/headers/headers.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { SellerHomeComponent } from './components/seller-home/seller-home.component';
 import { SellerComponent } from './components/seller/seller.component';
+import { SellerAuthGuard } from './guards/seller-auth.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +17,11 @@ const routes: Routes = [
   {
     path:'seller',
     component:SellerComponent
+  },
+  {
+    path:'seller-home',
+    component:SellerHomeComponent,
+    canActivate:[SellerAuthGuard]
   },
   {
     path:'cart',

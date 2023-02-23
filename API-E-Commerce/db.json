@@ -1,16 +1,5 @@
 {
   "seller": [
-    {
-      "name": "Abhilash Raju",
-      "email": "abhilash.raju@gmail.com",
-      "pwd": "12345",
-      "id": 1
-    },
-    {
-      "name": "Usha Raju",
-      "email": "usha.raju@gmail.com",
-      "pwd": "67890",
-      "id": 2
-    }
+   
   ]
 }
