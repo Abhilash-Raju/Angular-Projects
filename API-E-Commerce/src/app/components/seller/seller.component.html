@@ -2,9 +2,9 @@
     <div class='sign-up'>
 
         <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="row g-3 seller-form">
-        <h1>Sign Up Form</h1>
-
-        <div class="form-group">
+        <h1>{{header}}</h1>
+        <p class="text-danger">{{errorComment}}</p>
+        <div *ngIf="signIn" class="form-group">
             <label for="exampleFormControlInput1" class="form-label control-label col-sm-2">Name</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" ngModel id="exampleFormControlInput1" name='name' placeholder="Enter Name">
@@ -26,9 +26,14 @@
         </div>
 
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Sign In</button>
+            <button *ngIf='signIn' type="submit" class="btn btn-primary mb-3">Sign Up</button>
+            <button *ngIf='!signIn' type="submit" class="btn btn-primary mb-3">Log In</button>
         </div>
 
+        <div class="col-auto">
+            <p *ngIf='!signIn' >Don't have an Account? Please proceed to <a (click)="toggle()">Sign Up</a></p>
+            <p *ngIf='signIn' >Already have an Account? Click on <a (click)="toggle()">Log In</a></p>
+        </div>
     </form>
     </div>
 </div>

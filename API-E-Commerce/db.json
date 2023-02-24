@@ -1,5 +1,24 @@
 {
-  "seller": [
-   
+  "seller-auth": [
+    {
+      "name": "Abhilash Raju",
+      "email": "admin@domain.com",
+      "pwd": "1234",
+      "id": 1
+    },
+    {
+      "name": "Admin",
+      "email": "admin@domain.com",
+      "pwd": "1234",
+      "id": 2
+    },
+    {
+      "email": "adasd@gmail.com",
+      "pwd": "2345",
+      "name": "Raju",
+      "id": 3
+    }
+  ],
+  "products": [
   ]
 }
