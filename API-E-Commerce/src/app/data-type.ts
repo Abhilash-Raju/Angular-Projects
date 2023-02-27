@@ -1,7 +1,8 @@
 export interface SignUp{
     name:string,
     pwd:string,
-    email: string
+    email: string,
+    id:number
 }
 
 export interface Products{
@@ -10,5 +11,6 @@ export interface Products{
     productDesc:string,
     productImage:string,
     productCategory:string,
-    productPrice:number
+    productPrice:number,
+    id:number
 }

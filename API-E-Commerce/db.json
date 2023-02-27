@@ -20,5 +20,32 @@
     }
   ],
   "products": [
+    {
+      "productName": "iPhone 13",
+      "productPrice": "56000",
+      "productCategory": "Electronics",
+      "productColor": "Starlight",
+      "productDesc": "An Apple mobile product",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70",
+      "id": 1
+    },
+    {
+      "productName": "iPhone 14",
+      "productPrice": "86000",
+      "productCategory": "Electronics",
+      "productColor": "Midnight",
+      "productDesc": "An Apple mobile product",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
+      "id": 2
+    },
+    {
+      "productName": "iPhone 14 Pro",
+      "productPrice": "126000",
+      "productCategory": "Electronics",
+      "productColor": "Silver",
+      "productDesc": "An Apple mobile product",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
+      "id": 3
+    }
   ]
 }

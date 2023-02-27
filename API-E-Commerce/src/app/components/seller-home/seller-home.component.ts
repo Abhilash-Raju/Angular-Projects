@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Products } from 'src/app/data-type';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-seller-home',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerHomeComponent implements OnInit {
 
-  constructor() { }
+  productList:undefined | Products[];
+  productDel:undefined | string;
+  constructor(private productService:ProductsService) { }
 
   ngOnInit(): void {
+    this.productService.productList().subscribe((result) =>{
+      console.log(result);
+      this.productList=result;
+    })
   }
 
+  deleteProduct(id:number){
+    console.log('test id', id);
+    this.productService.deleteProduct(id).subscribe((res)=>{
+      if(res){
+        this.productDel = 'Product is deleted'
+      }
+    })
+    setTimeout(()=>{
+      this.productDel=undefined;
+      window.location.reload();
+    },3000);
+
+  }
+
+  
 }

@@ -1,0 +1,27 @@
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1,p{
+    text-align: center;
+    font:bolder;
+    font-size: 32px;
+    padding: 20px;
+    text-decoration:underline;
+}
+table td, table th{
+    border: 2px solid skyblue;
+    padding: 10px;
+    min-height: 260px;
+    width: 180px;
+}
+
+img{
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
