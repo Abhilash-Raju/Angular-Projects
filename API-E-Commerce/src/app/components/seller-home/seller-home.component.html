@@ -21,7 +21,9 @@
                 <td>{{item.productColor}}</td>
                 <td>{{item.productCategory}}</td>
                 <td>{{item.productDesc}}</td>
-                <td> <button type="button" class="btn btn-danger me-1" (click)="deleteProduct(item.id)" >Delete</button><button type="button" class="btn btn-warning">Edit</button></td>
+                <td> <button type="button" class="btn btn-danger me-1" (click)="deleteProduct(item.id)" ><fa-icon [icon]="iconDel"></fa-icon>
+                </button><button type="button" class="btn btn-warning"><fa-icon [icon]="iconEdit"></fa-icon></button>
+                </td>
             </tr>
         </tbody>
     </table>

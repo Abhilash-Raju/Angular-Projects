@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { SellerHomeComponent } from './components/seller-home/seller-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerAddProductComponent } from './components/seller-add-product/seller-add-product.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SellerAddProductComponent } from './components/seller-add-product/selle
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
