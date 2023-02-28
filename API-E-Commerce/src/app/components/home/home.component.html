@@ -1,1 +1,11 @@
-<p>home works!</p>
+<ngb-carousel *ngIf="products">
+	<ng-template ngbSlide *ngFor="let item of products">
+		<div class="picsum-img-wrapper">
+			<img class="img-fit" src="{{item.productImage}}" alt="Random first slide" />
+		</div>
+		<div class="carousel-caption text-dark fs-1 bg-light bg-gradient bg-opacity-50">
+			<h3>{{item.productName}}</h3>
+			<p>{{item.productDesc}}</p>
+		</div>
+	</ng-template>
+</ngb-carousel>
