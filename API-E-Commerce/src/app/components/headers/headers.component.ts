@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { Products } from 'src/app/data-type';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-headers',
@@ -8,9 +10,11 @@ import {Router} from '@angular/router'
 })
 export class HeadersComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, private productService: ProductsService) { }
   menuType:string = 'default';
   sellerName:string=''
+  searchResult : undefined | Products[];
+
   ngOnInit(): void {
     this.route.events.subscribe((val:any)=>{
       
@@ -34,6 +38,20 @@ export class HeadersComponent implements OnInit {
   logOut(){
     localStorage.removeItem('seller');
     this.route.navigate(['seller-auth'])
+  }
+
+  searchProduct(query: KeyboardEvent){
+    if(query){
+      const element = query.target as HTMLInputElement;
+      
+    this.productService.searchProduct(element.value).subscribe((res)=>{
+      res.length=4;
+      this.searchResult = res;
+    })
+    }
+  }
+  hideSearch(){
+    this.searchResult = undefined;
   }
 
 }

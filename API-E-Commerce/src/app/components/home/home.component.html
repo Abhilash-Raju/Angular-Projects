@@ -9,3 +9,26 @@
 		</div>
 	</ng-template>
 </ngb-carousel>
+
+
+<div class="product-list-wrapper">
+    <div class="row p-5 gy-3 bg-info-subtle" >
+        <div class="col-sm-3" *ngFor="let item of trendyProducts">
+            <div class="card shadow">
+                <img src="{{item.productImage}}" class="card-img-top card-img1 p-4" alt="">
+                <div class="card-body card-body1">
+                  <h2 class="card-title">{{item.productName}}</h2>
+                  <p class="card-text">{{item.productDesc}}.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Color: {{item.productColor}}</li>
+                  <li class="list-group-item">Price: {{item.productPrice}}</li>
+                </ul>
+                <div class="card-body card-body2">
+                  <a href="#" class="card-link">View Details</a>
+                  <a href="#" class="card-link">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
