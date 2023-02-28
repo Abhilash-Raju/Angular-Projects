@@ -19,9 +19,8 @@ export class SellerAddProductComponent implements OnInit {
     .subscribe((res)=>{
       if(res){
         this.addProductMessager='New Product Added';
-        setTimeout(()=>(this.addProductMessager=undefined), 4000);
+        setTimeout(()=>{this.addProductMessager=undefined; this.route.navigate(['seller-home']);}, 4000);
       }
-      // this.route.navigate(['seller-home']);
     },
     (err)=>{
       console.error(err);

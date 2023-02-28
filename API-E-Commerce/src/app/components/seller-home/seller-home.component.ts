@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/data-type';
 import { ProductsService } from 'src/app/services/products.service';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-
+import { faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-seller-home',
   templateUrl: './seller-home.component.html',
@@ -36,7 +34,5 @@ export class SellerHomeComponent implements OnInit {
       window.location.reload();
     },3000);
 
-  }
-
-  
+  }  
 }

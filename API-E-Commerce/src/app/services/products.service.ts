@@ -20,4 +20,12 @@ export class ProductsService {
   deleteProduct(id:number){
     return this.http.delete(`http://localhost:3000/products/${id}`)
   }
+
+  getProduct(id:string){
+    return this.http.get<Products>(`http://localhost:3000/products/${id}`)
+  }
+
+  updateProduct(product:Products){
+   return this.http.put<Products>(`http://localhost:3000/products/${product.id}`,product);
+  }
 }
