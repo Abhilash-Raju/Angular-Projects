@@ -1,11 +1,13 @@
-<div class="row search-items shadow">
+<div class="row search-items shadow" *ngFor="let item of searchResult">
     <div class="col-sm-3">
-        <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/y/u/3/-original-imaggsuddwubypxp.jpeg?q=70" alt="">
+        <a routerLink="/details/{{item.id}}">
+            <img src="{{item.productImage}}" alt="">
+        </a>
     </div>
     <div class="col-sm-8 details">
-        <h2>Product Name</h2>
-        <p><b>Price: 10000</b></p>
-        <p><span>Color: Red</span> <span>Category:Mobile</span></p>
-        <p>Product Description</p>
+        <a routerLink="/details/{{item.id}}"><h2>{{item.productName}}</h2></a>
+        <a routerLink="/details/{{item.id}}"><p><b>Price: {{item.productPrice}}</b></p></a>
+        <a routerLink="/details/{{item.id}}"><p><span>Color: {{item.productColor}}</span> <span>Category: {{item.productCategory}}</span></p></a>
+        <a routerLink="/details/{{item.id}}"><p>Product Description: {{item.productDesc}}</p></a>
     </div>
 </div>

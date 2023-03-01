@@ -45,7 +45,9 @@ export class HeadersComponent implements OnInit {
       const element = query.target as HTMLInputElement;
       
     this.productService.searchProduct(element.value).subscribe((res)=>{
-      res.length=4;
+      if(res.length >5){
+        res.length=4;
+      }
       this.searchResult = res;
     })
     }
@@ -56,7 +58,10 @@ export class HeadersComponent implements OnInit {
   };
 
   searchSubmit(val:string){
-    // console.log(val);
-    this.route.navigate([`search/${val}`])
+    console.log('Header',val);
+    this.route.navigate([`search/${val}`]);
+    setTimeout(()=>{
+      window.location.reload();
+    },500);
   }
 }
