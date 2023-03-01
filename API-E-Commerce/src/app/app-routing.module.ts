@@ -5,6 +5,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { HeadersComponent } from './components/headers/headers.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { SearchComponent } from './components/search/search.component';
 import { SellerAddProductComponent } from './components/seller-add-product/seller-add-product.component';
 import { SellerHomeComponent } from './components/seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './components/seller-update-product/seller-update-product.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   },{
     path:'seller-update-product/:id',
     component:SellerUpdateProductComponent,
+    canActivate:[SellerAuthGuard]
+  },{
+    path:'search/:query',
+    component:SearchComponent,
     canActivate:[SellerAuthGuard]
   },
   {

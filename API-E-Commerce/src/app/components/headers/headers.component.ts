@@ -33,12 +33,12 @@ export class HeadersComponent implements OnInit {
         }
       }
     })
-  }
+  };
 
   logOut(){
     localStorage.removeItem('seller');
     this.route.navigate(['seller-auth'])
-  }
+  };
 
   searchProduct(query: KeyboardEvent){
     if(query){
@@ -49,9 +49,14 @@ export class HeadersComponent implements OnInit {
       this.searchResult = res;
     })
     }
-  }
+  };
+
   hideSearch(){
     this.searchResult = undefined;
-  }
+  };
 
+  searchSubmit(val:string){
+    // console.log(val);
+    this.route.navigate([`search/${val}`])
+  }
 }

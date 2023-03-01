@@ -1,0 +1,21 @@
+.search-items img {
+    object-fit: contain;
+    width: 100%;
+    height: 200px;
+}
+
+.search-items{
+    margin:25px auto;
+    width:1000px;
+    padding: 10px;
+}
+
+.search-items .details{
+    margin:25px 10px;
+    display: inline-block;
+    justify-content: space-evenly;
+}
+
+.search-items .details p span{
+    padding-right: 10px;
+}
