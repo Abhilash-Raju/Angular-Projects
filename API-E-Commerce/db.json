@@ -33,7 +33,7 @@
       "productName": "iPhone 14",
       "productPrice": "86000",
       "productCategory": "Electronics",
-      "productColor": "Midnight",
+      "productColor": "Black",
       "productDesc": "An Apple mobile product",
       "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
       "id": 2
@@ -60,7 +60,7 @@
       "productName": "Google Pixel 7",
       "productPrice": "59999",
       "productCategory": "Electronics",
-      "productColor": "Obsidian",
+      "productColor": "Black",
       "productDesc": "A Google Mobile Device",
       "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/y/u/3/-original-imaggsuddwubypxp.jpeg?q=70",
       "id": 5
@@ -73,6 +73,20 @@
       "productDesc": "Nothing Phone Mobile Device",
       "productImage": "https://rukminim1.flixcart.com/image/832/832/l5h2xe80/mobile/4/7/l/-original-imagg4y3grhaxckf.jpeg?q=70",
       "id": 6
+    }
+  ],
+  "user-auth": [
+    {
+      "email": "adasd@gmail.com",
+      "pwd": "2345",
+      "name": "Raju",
+      "id": 1
+    },
+    {
+      "email": "admin@domain.com",
+      "pwd": "admin1234",
+      "name": "Abhilash Raju",
+      "id": 2
     }
   ]
 }

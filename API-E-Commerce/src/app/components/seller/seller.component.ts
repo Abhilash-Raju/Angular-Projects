@@ -18,10 +18,10 @@ export class SellerComponent implements OnInit {
   signIn:boolean = true;
   errorComment:string =''
   
-  header = this.signIn ? "Sign Up Form" : "Login Form";
+  header = this.signIn ? "Seller Sign Up Form" : "Seller Login Form";
   toggle(){
-    this.signIn = this.header == "Sign Up Form"? false : true;
-    this.header = this.signIn ? "Sign Up Form" : "Login Form";
+    this.signIn = this.header == "Seller Sign Up Form"? false : true;
+    this.header = this.signIn ? "Seller Sign Up Form" : "Seller Login Form";
   }
 
   signUp(data:SignUp): void {

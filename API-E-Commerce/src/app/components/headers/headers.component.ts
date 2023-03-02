@@ -57,6 +57,13 @@ export class HeadersComponent implements OnInit {
     this.searchResult = undefined;
   };
 
+  redirect(id:number){
+    this.route.navigate(['/details/' +id]);
+    setTimeout(()=>{
+      window.location.reload();
+    },500);
+  }
+
   searchSubmit(val:string){
     console.log('Header',val);
     this.route.navigate([`search/${val}`]);

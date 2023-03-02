@@ -15,7 +15,7 @@
           <a class="nav-link" routerLink="seller-auth">Seller</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="login">Login</a>
+          <a class="nav-link" routerLink="login">Login/Sign Up</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="cart">Cart</a>
@@ -42,7 +42,7 @@
         <input #searchInput class="form-control me-2" (keyup)="searchProduct($event)" (blur)="hideSearch()" type="search" placeholder="Search" aria-label="Search">
         <button class="btn bg-success-subtle btn-outline-success" type="submit" (click)="searchSubmit(searchInput.value)">Search</button>
         <ul class="suggested-result" *ngIf="searchResult">
-          <li *ngFor="let item of searchResult"> <a>{{item.productName}}</a></li>
+          <li *ngFor="let item of searchResult"> <a (mousedown)="redirect(item.id)">{{item.productName}}</a></li>
         </ul>
       </form>
     </div>

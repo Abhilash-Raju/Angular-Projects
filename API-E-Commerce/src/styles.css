@@ -13,8 +13,8 @@ a{
     margin: 50px auto;
     padding: 20px 0;
     width: 50%;
-    background-color: antiquewhite;
-    box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgb(185, 229, 242);
+    border-radius: 100px;
 }
 
 .seller-form{
