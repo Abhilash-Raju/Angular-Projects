@@ -49,7 +49,7 @@ const routes: Routes = [
     component:CartComponent
   },
   {
-    path:'login',
+    path:'user-auth',
     component:LoginComponent
   }
 ];

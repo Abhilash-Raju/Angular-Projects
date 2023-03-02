@@ -15,10 +15,25 @@
           <a class="nav-link" routerLink="seller-auth">Seller</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="login">Login/Sign Up</a>
+          <a class="nav-link" routerLink="user-auth">Login/Sign Up</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="cart">Cart</a>
+        </li>
+      </ul>
+
+      <ul *ngSwitchCase="'user'" class="navbar-nav me-auto mb-2 mb-lg-0 fs-6">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="userlogOut()">Log Out</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{userName | titlecase}}</a>
         </li>
       </ul>
 
@@ -33,12 +48,12 @@
           <a class="nav-link" (click)="logOut()">Log Out</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="#">{{sellerName | titlecase}}</a>
+          <a class="nav-link">{{sellerName | titlecase}}</a>
         </li>
       </ul>
 
     </div>
-      <form *ngIf="menuType=='default'" class="d-flex mx-auto" role="search">
+      <form *ngIf="menuType=='default' || menuType=='user'" class="d-flex mx-auto" role="search">
         <input #searchInput class="form-control me-2" (keyup)="searchProduct($event)" (blur)="hideSearch()" type="search" placeholder="Search" aria-label="Search">
         <button class="btn bg-success-subtle btn-outline-success" type="submit" (click)="searchSubmit(searchInput.value)">Search</button>
         <ul class="suggested-result" *ngIf="searchResult">

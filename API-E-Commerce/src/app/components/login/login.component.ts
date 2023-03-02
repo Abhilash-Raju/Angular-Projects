@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SignUp } from 'src/app/data-type';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
@@ -9,37 +10,44 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private user:UserAuthService) { }
-
+  constructor(private user:UserAuthService,private router:Router) { }
   ngOnInit(): void {
+    // this.user.isLoggedIn.subscribe((res)=>{
+    //   if(res){
+    //     this.router.navigate(['']);
+    //   }
+    // })
+
+    this.user.userAuthReload();
+
   }
   
-  signIn:boolean = true;
+  signup:boolean = true;
   errorComment:string =''
   
-  header = this.signIn ? "Sign Up Form" : "Login Form";
+  header = this.signup ? "Sign Up Form" : "Login Form";
   toggle(){
-    this.signIn = this.header == "Sign Up Form"? false : true;
-    this.header = this.signIn ? "Sign Up Form" : "Login Form";
+    this.signup = this.header == "Sign Up Form"? false : true;
+    this.header = this.signup ? "Sign Up Form" : "Login Form";
   }
 
   signUp(data:SignUp): void {
 
-    if(this.signIn){
-      console.log(this.signIn)
+    if(this.signup){
+      // console.log(this.signup)
       // console.log('Signup', data)
       this.user.userSignUp(data);
     }
     
     else {
-      console.log(this.signIn);
+      // console.log(this.signup);
       // console.warn('Login',data);
-      this.user.userLogIn(data);
-      // this.seller.isLoginError.subscribe((response)=>{
-      //   if(response){
-      //     this.errorComment='User Email or Password is Incorrect'
-      //   }
-      // })
+      this.user.userLogIn(data);  
+      this.user.isLoggedIn.subscribe((res)=>{
+        if(res){
+          this.errorComment='Please Enter Valid Credentials'
+        }
+      })    
     }
 
   }

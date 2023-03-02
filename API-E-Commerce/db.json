@@ -77,16 +77,10 @@
   ],
   "user-auth": [
     {
-      "email": "adasd@gmail.com",
-      "pwd": "2345",
-      "name": "Raju",
-      "id": 1
-    },
-    {
       "email": "admin@domain.com",
-      "pwd": "admin1234",
+      "pwd": "12345",
       "name": "Abhilash Raju",
-      "id": 2
+      "id": 1
     }
   ]
 }

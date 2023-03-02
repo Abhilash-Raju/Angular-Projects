@@ -36,7 +36,7 @@ export class SellerService {
     .subscribe((result:any)=>{
       console.warn(result);
      if(result && result.body && result.body.length){
-        console.warn(`User has Logged In`) 
+        // console.warn(`User has Logged In`) 
         localStorage.setItem('seller',JSON.stringify(result.body));
         this.route.navigate(['seller-home'])
      }
