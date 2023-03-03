@@ -82,5 +82,43 @@
       "name": "Abhilash Raju",
       "id": 1
     }
+  ],
+  "cart": [
+    {
+      "productName": "iPhone 14 Pro",
+      "productPrice": "126000",
+      "productCategory": "Electronics",
+      "productColor": "Silver",
+      "productDesc": "An Apple mobile product",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
+      "quantity": 1,
+      "userId": 1,
+      "productId": 3,
+      "id": 4
+    },
+    {
+      "productName": "Google Pixel 7",
+      "productPrice": "59999",
+      "productCategory": "Electronics",
+      "productColor": "Black",
+      "productDesc": "A Google Mobile Device",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/y/u/3/-original-imaggsuddwubypxp.jpeg?q=70",
+      "quantity": 1,
+      "userId": 1,
+      "productId": 5,
+      "id": 5
+    },
+    {
+      "productName": "iPhone 14 Pro",
+      "productPrice": "126000",
+      "productCategory": "Electronics",
+      "productColor": "Silver",
+      "productDesc": "An Apple mobile product",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
+      "quantity": 1,
+      "productId": 3,
+      "userId": 1,
+      "id": 6
+    }
   ]
 }

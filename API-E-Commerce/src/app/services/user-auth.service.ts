@@ -28,9 +28,10 @@ export class UserAuthService {
     .subscribe((result:any)=>{
       console.warn("Login Service",result);
      if(result && result.body?.length){
-        // console.warn(`User has Logged In`) 
-        this.isLoggedIn.emit(false);
+        console.warn(`User has Logged In`) 
         localStorage.setItem('user',JSON.stringify(result.body[0]));
+        console.log(localStorage.getItem('user'));
+        this.isLoggedIn.emit(false);
         this.router.navigate(['/']);
       }else{
        this.isLoggedIn.emit(true);
