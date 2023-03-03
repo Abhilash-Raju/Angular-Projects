@@ -15,14 +15,12 @@ export class HeadersComponent implements OnInit {
   sellerName:string='';
   userName : string ='';
   searchResult : undefined | Products[];
-
+  num : number =0;
   ngOnInit(): void {
     this.route.events.subscribe((val:any)=>{
       
       if(val.url){
-        // console.log(val.url)
         if(localStorage.getItem('seller') && val.url.includes('seller')){
-          // console.warn('In seller area');
           this.menuType='seller';
           let sellerStore=localStorage.getItem('seller');
           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
@@ -33,26 +31,33 @@ export class HeadersComponent implements OnInit {
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.name;
-          console.log('User',this.userName);
+          this.productService.getCartList(userData.id);
         }
         else {
-          // console.log('Outside')
           this.menuType='default'
         }
       }
     })
+
+    let cartData = localStorage.getItem('localCart');
+    if(cartData){
+      this.num=JSON.parse(cartData).length;
+    }
+    this.productService.cartData.subscribe((items)=>{
+      this.num=items.length;
+    })
   };
   
   logOut(){
-    // if(localStorage.getItem('seller')){
       localStorage.removeItem('seller');
       this.route.navigate(['/']);
     };
     userlogOut() {
       localStorage.removeItem('user');
       this.menuType='default';
+      this.route.navigate(['/']);
+      this.productService.cartData.emit([]);
     };
-  // };
 
   searchProduct(query: KeyboardEvent){
     if(query){

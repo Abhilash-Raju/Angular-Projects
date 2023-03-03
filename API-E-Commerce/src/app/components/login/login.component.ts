@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SignUp } from 'src/app/data-type';
+import { Cart, Products, SignUp } from 'src/app/data-type';
+import { ProductsService } from 'src/app/services/products.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -10,16 +11,9 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private user:UserAuthService,private router:Router) { }
+  constructor(private user:UserAuthService,private router:Router, private productService:ProductsService) { }
   ngOnInit(): void {
-    // this.user.isLoggedIn.subscribe((res)=>{
-    //   if(res){
-    //     this.router.navigate(['']);
-    //   }
-    // })
-
     this.user.userAuthReload();
-
   }
   
   signup:boolean = true;
@@ -34,21 +28,64 @@ export class LoginComponent implements OnInit {
   signUp(data:SignUp): void {
 
     if(this.signup){
-      // console.log(this.signup)
-      // console.log('Signup', data)
       this.user.userSignUp(data);
+      this.user.isLoggedIn.subscribe((res)=>{
+        if(res){
+          this.errorComment='Please Enter Valid Credentials'
+        }
+        else {
+          this.localStoreToCart()
+        }
+      })   
     }
     
     else {
-      // console.log(this.signup);
-      // console.warn('Login',data);
       this.user.userLogIn(data);  
       this.user.isLoggedIn.subscribe((res)=>{
         if(res){
           this.errorComment='Please Enter Valid Credentials'
         }
+        else {
+          this.localStoreToCart()
+        }
       })    
     }
 
+  }
+
+  localStoreToCart(){
+    let data=localStorage.getItem('localCart');
+    let user1 = localStorage.getItem('user');
+    console.log('Login User', user1);
+    let userData = user1 && JSON.parse(user1);
+    console.log('Login userData',userData)
+    let userId = userData.id;
+    console.log('Login UserID', userId);
+
+    if(data){
+      let cartDataList:Products[] = JSON.parse(data)
+      console.log('User', user1);
+        cartDataList.forEach((product:Products,index)=>{
+          let cartData:Cart={
+            ...product,
+            productId:product.id,
+            userId
+          }
+          delete cartData.id;
+          setTimeout(()=>{
+            this.productService.addToCart(cartData).subscribe((res)=>{
+              if(res){
+                console.log('Item in DB',res)
+              }
+            })
+            if(cartDataList.length === index+1){
+              localStorage.removeItem('localCart');
+            }
+          },400);
+        })
+      }
+      setTimeout(()=>{
+        this.productService.getCartList(userId)
+      },500)
   }
 }
