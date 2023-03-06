@@ -28,3 +28,11 @@ export interface Cart{
     productId:number,
     userId:number
 }
+
+export interface Price{
+    price : number,
+    discount: number,
+    tax: number,
+    delivery:number,
+    total : number
+}

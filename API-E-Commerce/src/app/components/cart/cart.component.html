@@ -1,25 +1,25 @@
 <div class="cart-page">
     <h1>Cart</h1>
     <div class="row cart-section">
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
+        <div class="col-sm-8 cart-details" >
+            <ul  *ngFor="let item of cartData" class="shadow rounded">
                 <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
+                    <img src="{{item.productImage}}" alt="">
                 </li>
                 <li>
-                   <span>Product Name: </span>
+                   <span class="bold">Product Name:</span><span> {{item.productName}} </span>
                 </li>
                 <li>
-                   <span>Product Price: </span>
+                   <span class="bold">Product Price:</span><span> {{item.productPrice}}</span>
                 </li>
                 <li>
-                   <span>Product Quantity: </span>
+                   <span class="bold">Product Quantity:</span><span> {{item.quantity}}</span>
                 </li>
                 <li>
-                   <span>Product Color: </span>
+                   <span class="bold">Product Color:</span><span> {{item.productColor}}</span>
                 </li>
                 <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
+                   <button class="btn btn-danger">Remove </button>
                 </li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
                         Amount :
                     </span>
                     <span>
-                        1000
+                        {{this.priceSummary.price}}
                     </span>
                 </li>
                 <li>
@@ -39,7 +39,7 @@
                         Delivery Charges :
                     </span>
                     <span>
-                        1000
+                        {{this.priceSummary.delivery}}
                     </span>
                 </li>
                 <li>
@@ -47,147 +47,22 @@
                         Discount :
                     </span>
                     <span>
-                        1000
+                        {{this.priceSummary.discount}}
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        Tax :
+                    </span>
+                    <span>
+                        {{this.priceSummary.tax}}
                     </span>
                 </li>
                 <li>
                     <span><h2>Total</h2></span>
-                    <span><h2>4000</h2></span>
+                    <span><h2>{{this.priceSummary.total.toFixed(0)}}</h2></span>
                 </li>
             </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-8 cart-details shadow rounded">
-            <ul>
-                <li >
-                    <img src="https://rukminim1.flixcart.com/image/832/832/ktketu80/mobile/6/n/d/iphone-13-mlpg3hn-a-apple-original-imag6vpyghayhhrh.jpeg?q=70" alt="">
-                </li>
-                <li>
-                   <span>Product Name: </span>
-                </li>
-                <li>
-                   <span>Product Price: </span>
-                </li>
-                <li>
-                   <span>Product Quantity: </span>
-                </li>
-                <li>
-                   <span>Product Color: </span>
-                </li>
-                <li>
-                   <button class="btn btn-danger">Remove from Cart </button>
-                </li>
-            </ul>
-        </div>
-       
+        </div>       
     </div>
 </div>

@@ -85,18 +85,6 @@
   ],
   "cart": [
     {
-      "productName": "iPhone 14 Pro",
-      "productPrice": "126000",
-      "productCategory": "Electronics",
-      "productColor": "Silver",
-      "productDesc": "An Apple mobile product",
-      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 3,
-      "id": 4
-    },
-    {
       "productName": "Google Pixel 7",
       "productPrice": "59999",
       "productCategory": "Electronics",
@@ -119,6 +107,18 @@
       "productId": 3,
       "userId": 1,
       "id": 6
+    },
+    {
+      "productName": "Nothing Phone (1)",
+      "productPrice": "35999",
+      "productCategory": "Electronics",
+      "productColor": "White",
+      "productDesc": "Nothing Phone Mobile Device",
+      "productImage": "https://rukminim1.flixcart.com/image/832/832/l5h2xe80/mobile/4/7/l/-original-imagg4y3grhaxckf.jpeg?q=70",
+      "quantity": 10,
+      "userId": 1,
+      "productId": 6,
+      "id": 7
     }
   ]
 }
