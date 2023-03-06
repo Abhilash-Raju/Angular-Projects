@@ -1,0 +1,42 @@
+<div class="seller">
+        <div class="row">
+            <div class="col-sm-8 sign-up">
+                <form #sellerSignUp="ngForm"  class="row g-3 seller-form">
+                    <h1>Checkout</h1>
+                    <div  class="form-group">
+                        <label for="exampleFormControlInput1" class="form-label control-label col-sm-2">Address</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" ngModel id="exampleFormControlInput1" required name='name' #name="ngModel" minlength="10" maxlength="50" placeholder="Enter Shipping Address">
+                        </div>
+                        <p class="invalid-input"><span *ngIf="name.invalid && name.touched">Please Enter Valid Address</span></p>
+                    </div>
+            
+                    <div class='form-group'>   
+                         <label class="form-label control-label col-sm-2" for="email">Email</label>
+                         <div class="col-sm-12">
+                            <input type="email" class="form-control" ngModel id="email" name="email" required email #email="ngModel" placeholder="Enter Email Address">
+                         </div>
+                         <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter Valid Email</span></p>
+                    </div>
+            
+                    <div class="form-group">
+                        <label class="form-label control-label col-sm-2" for="phone">Number</label>
+                        <div class="col-sm-12">
+                            <input type="phone" class="form-control" ngModel id="phone" name="phone" #phone="ngModel" required minlength="10" placeholder="Enter Contact Details">
+                        </div>
+                        <p class="invalid-input"><span *ngIf="phone.invalid && phone.touched">Please Enter Valid Number</span></p>
+                    </div>
+            
+                    <div class="col-auto">
+                        <button  [disabled]="sellerSignUp.invalid" type="submit" class="btn btn-info mb-3">Proceed to Pay</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4 summary">
+                <div class="col-sm-12 mt-5">
+                    <p class="fs-5"><span class="bold">Total Amount:</span><span class="text-primary-emphasis"> 10000</span></p>
+                    <p class="fs-5"><span class="bold">Payment method:</span><span class="text-primary-emphasis"> Pay on Delivery</span></p>
+                </div>
+            </div>
+        </div>
+</div>

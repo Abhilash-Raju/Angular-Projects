@@ -1,0 +1,8 @@
+.bold{
+    font-weight: 500;
+}
+
+.summary{
+    display:flex;
+    align-items: center;
+}

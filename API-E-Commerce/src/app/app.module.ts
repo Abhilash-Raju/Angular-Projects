@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     SellerUpdateProductComponent,
     SearchComponent,
     FooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

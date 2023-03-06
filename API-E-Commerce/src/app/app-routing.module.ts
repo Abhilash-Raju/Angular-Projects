@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeadersComponent } from './components/headers/headers.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path:'user-auth',
     component:LoginComponent
+  },
+  {
+    path:'checkout',
+    component:CheckoutComponent
   }
 ];
 

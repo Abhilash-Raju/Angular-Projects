@@ -19,12 +19,12 @@
                    <span class="bold">Product Color:</span><span> {{item.productColor}}</span>
                 </li>
                 <li>
-                   <button class="btn btn-danger">Remove </button>
+                   <button class="btn btn-danger" (click)="removefromCart(item.id)">Remove</button>
                 </li>
             </ul>
         </div>
         <div class="col-sm-4 summary">
-            <h3>Checkout</h3>
+            <h3>Order Summary</h3>
             <ul>
                 <li>
                     <span>
@@ -61,6 +61,9 @@
                 <li>
                     <span><h2>Total</h2></span>
                     <span><h2>{{this.priceSummary.total.toFixed(0)}}</h2></span>
+                </li>
+                <li>
+                    <button class="btn btn-success checkout" (click)="checkout()">Checkout </button>
                 </li>
             </ul>
         </div>       
