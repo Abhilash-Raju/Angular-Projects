@@ -83,20 +83,6 @@
       "id": 1
     }
   ],
-  "cart": [
-    {
-      "productName": "iPhone 14",
-      "productPrice": "86000",
-      "productCategory": "Electronics",
-      "productColor": "Black",
-      "productDesc": "An Apple mobile product",
-      "productImage": "https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 2,
-      "id": 1
-    }
-  ],
-  "orders": [
-  ]
+  "cart": [],
+  "orders": []
 }
